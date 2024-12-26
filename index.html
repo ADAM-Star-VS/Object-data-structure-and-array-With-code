@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Object and Array Example</title>
+</head>
+<body>
+
+  <h1>Object and Array Example</h1>
+
+  <button onclick="showPreview()">Show Preview</button>
+
+  <div id="preview"></div>
+
+  <script>
+    const person = {
+      firstName: "Adam",
+      lastName: "Mohammad",
+      age: 11,
+      city: "Chattogram",
+      hobbies: ["coding", "music", "sports"]
+    };
+
+    const numbers = [1, 2, 3, 4, 5];
+    const fruits = ["apple", "banana", "orange"];
+
+    function showPreview() {
+      const previewDiv = document.getElementById("preview");
+
+      // Display person object
+      previewDiv.innerHTML = `
+        <h2>Person Object</h2>
+        <p>First Name: ${person.firstName}</p>
+        <p>Last Name: ${person.lastName}</p>
+        <p>Age: ${person.age}</p>
+        <p>City: ${person.city}</p>
+        <p>Hobbies: ${person.hobbies.join(", ")}</p>
+      `;
+
+      // Display numbers array
+      previewDiv.innerHTML += `
+        <h2>Numbers Array</h2>
+        <ul>
+          ${numbers.map(number => `<li>${number}</li>`).join("")}
+        </ul>
+      `;
+
+      // Display fruits array
+      previewDiv.innerHTML += `
+        <h2>Fruits Array</h2>
+        <ul>
+          ${fruits.map(fruit => `<li>${fruit}</li>`).join("")}
+        </ul>
+      `;
+    }
+  </script>
+
+</body>
+</html>
